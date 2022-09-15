@@ -8,7 +8,7 @@ def start_game():
     number_of_guesses = 1
     guess = y+1
 
-    print("\nJ'ai choisi un nombre entre", x," et ", y, ". À vous de le deviner...")
+    print("\nJ'ai choisi un nombre entre", x," et ", y,". À vous de le deviner...")
 
     while guess != random_number:
         guess = int(input("Entrez votre essai:"))
