@@ -1,0 +1,39 @@
+#Créé par Jacques-Conrad Calagui-Painchaud
+#Créé le 2022/09/15
+#L'ordinateur va choisir un nombre au hasard. L'usager doit deviner cette nombre.
+
+import random
+
+def choose_limits():
+    global lower_limit, upper_limit, random_number
+    lower_limit = int(input("Choisissez la borne minimale:"))
+    upper_limit = int(input("Choisissez la borne maximale:"))
+    random_number = random.randint(lower_limit, upper_limit)
+
+def play_game():
+    choose_limits()
+    number_of_guesses = 1
+    print(f"J'ai choisi un nombre entre {lower_limit} et {upper_limit}. À vous de le deviner...")
+    guess = upper_limit + 1
+
+    while guess != random_number:
+        guess = int(input("Entrez votre essai :"))
+
+        if guess > random_number:
+            print(f"Mauvais choix, le nombre est plus petit que {guess}.")
+            number_of_guesses = number_of_guesses + 1
+
+        elif guess < random_number:
+            print(f"Mauvais choix, le nombre est plus grand que {guess}.")
+            number_of_guesses = number_of_guesses + 1
+
+    print("\nBravo! Bonne réponse.")
+    print(f"Vous avez reussi en {number_of_guesses} essai(s)")
+
+    answer = str(input("Voulez vous jouer une autre partie (o/n)? :"))
+    if answer == "o":
+        play_game()
+    if answer == "n":
+        print("Merci et au revoir...")
+
+play_game()
