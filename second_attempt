@@ -1,6 +1,6 @@
 #Créé par Jacques-Conrad Calagui-Painchaud
 #Créé le 2022/09/15
-#L'ordinateur va choisir un nombre au hasard. L'usager doit deviner cette nombre.
+#L'usager va deviner un nombre aléatoirement choisi par l'ordinateur.
 #TP2
 
 import random
