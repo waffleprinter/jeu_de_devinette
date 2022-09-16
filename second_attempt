@@ -13,9 +13,9 @@ def choose_limits():
 
 def play_game():
     choose_limits()
-    number_of_guesses = 0
     print(f"J'ai choisi un nombre entre {lower_limit} et {upper_limit}. À vous de le deviner...")
     guess = upper_limit + 1
+    number_of_guesses = 0
 
     while guess != random_number:
         guess = int(input("Entrez votre essai :"))
