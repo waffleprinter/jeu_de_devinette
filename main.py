@@ -1,34 +1,36 @@
 import random
 
-def start_game():
-    x = int(input("Choisissez la borne minimale:"))
-    y = int(input("Choisissez la borne maximale:"))
 
-    random_number = random.randint(x, y)
-    number_of_guesses = 1
-    guess = y+1
+def choose_limits():
+    global lower_limit, upper_limit
+    lower_limit = int(input("Choisissez la borne minimale:"))
+    upper_limit = int(input("Choisissez la borne maximale:"))
 
-    print("\nJ'ai choisi un nombre entre", x," et ", y,". À vous de le deviner...")
+
+while True:
+    choose_limits()
+    random_number = random.randint(lower_limit, upper_limit)
+    print(f"\nJ'ai choisi un nombre entre {lower_limit} et {upper_limit}. À vous de le deviner...")
+
+    guess = upper_limit + 1
+    number_of_guesses = 0
 
     while guess != random_number:
         guess = int(input("Entrez votre essai:"))
+        number_of_guesses += 1
 
         if guess > random_number:
-            print("Mauvais choix, le nombre est plus petit que", guess, "\n")
-            number_of_guesses = number_of_guesses + 1
-
+            print(f"Mauvais choix, le nombre est plus petit que {guess}.")
         elif guess < random_number:
-            print("Mauvais choix, le nombre est plus grand que", guess, "\n")
-            number_of_guesses = number_of_guesses + 1
+            print(f"Mauvais choix, le nombre est plus grand que {guess}.")
 
-    print("Bravo! Bonne reponse.")
-    print("Vous avez reussi en:", number_of_guesses, "essai(s).")
+    print("\nBravo! Bonne réponse.")
+    print(f"Vous avez reussi en {number_of_guesses} essai(s).")
 
-    answer = str(input("\nVoulez vous jouer une autre partie (o/n)?"))
-    if answer == "o":
-        start_game()
-    elif answer == "n":
+    play_again = str(input("Voulez vous jouer une autre partie? (o/n)"))
+    if play_again == "o":
+        continue
+    elif play_again == "n":
         print("Merci et au revoir...")
+        break
 
-
-start_game()
