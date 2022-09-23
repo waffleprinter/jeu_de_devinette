@@ -1,7 +1,18 @@
+"""
+Programme fait par Jacques-Conrad Calagui-Painchaud
+Groupe: 405
+Description: L'ordinateur choisira un nombre aléatoire entre des bornes définis par l'usager.
+L'usager essayera ensuite de deviner cette nombre.
+"""
+
 import random
 
 
 def choose_limits():
+    """
+    L'usager choisi les bornes maximales et minimales pour le nombre aléatoire choisi par l'ordinateur.
+    :return: None
+    """
     global lower_limit, upper_limit
     lower_limit = int(input("Choisissez la borne minimale:"))
     upper_limit = int(input("Choisissez la borne maximale:"))
