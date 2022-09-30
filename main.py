@@ -23,7 +23,7 @@ while True:
     random_number = random.randint(lower_limit, upper_limit)
     print(f"\nJ'ai choisi un nombre entre {lower_limit} et {upper_limit}. À vous de le deviner...")
 
-    guess = upper_limit + 1
+    guess = "None"
     number_of_guesses = 0
 
     while guess != random_number:
