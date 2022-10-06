@@ -27,8 +27,8 @@ while True:
     number_of_guesses = 0
 
     while guess != random_number:
-        guess = int(input("Entrez votre essai:"))
         number_of_guesses += 1
+        guess = int(input("Entrez votre essai:"))
 
         if guess > random_number:
             print(f"Mauvais choix, le nombre est plus petit que {guess}.")
