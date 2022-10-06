@@ -38,10 +38,9 @@ while True:
     print("\nBravo! Bonne réponse.")
     print(f"Vous avez reussi en {number_of_guesses} essai(s).")
 
-    play_again = str(input("Voulez vous jouer une autre partie? (o/n)"))
+    play_again = str(input("Voulez vous jouer une autre partie? (o/n)\n"))
     if play_again == "o":
         continue
     elif play_again == "n":
         print("Merci et au revoir...")
         break
-
