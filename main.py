@@ -7,6 +7,9 @@ L'usager essayera ensuite de deviner cette nombre.
 
 import random
 
+lower_limit, upper_limit = 0, 0
+play_game = True
+
 
 def choose_limits():
     """
@@ -18,7 +21,7 @@ def choose_limits():
     upper_limit = int(input("Choisissez la borne maximale:"))
 
 
-while True:
+while play_game:
     choose_limits()
     random_number = random.randint(lower_limit, upper_limit)
     print(f"\nJ'ai choisi un nombre entre {lower_limit} et {upper_limit}. À vous de le deviner...")
@@ -38,10 +41,8 @@ while True:
     print("\nBravo! Bonne réponse.")
     print(f"Vous avez reussi en {number_of_guesses} essai(s).")
 
-    play_again = str(input("Voulez vous jouer une autre partie? (o/n)\n"))
-    
-    if play_again == "o":
-        continue
-    elif play_again == "n":
+    play_again = input("Voulez vous jouer une autre partie? (o/n)\n")
+
+    if play_again == "n":
         print("Merci et au revoir...")
-        break
+        play_game = False
